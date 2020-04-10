@@ -1,4 +1,4 @@
-# SSD1306 OLED MakeCode Package [![Build Status](https://travis-ci.org/Tinkertanker/pxt-oled-ssd1306.svg?branch=master)](https://travis-ci.org/Tinkertanker/pxt-oled-ssd1306)
+# SSD1306 OLED MakeCode Package
 
 This is the MakeCode Package for SSD1306 OLED controller, based on the Adafruit Arduino library available [here](https://github.com/adafruit/Adafruit_SSD1306).
 
@@ -12,7 +12,7 @@ Initializes the OLED display.
 Sets up the OLED display and prepares it for use by the micro:bit.
 
 ```sig
-OLED.init(64, 128);
+OLED.init(128, 64)
 ```
 
 This block must be placed before any of the ``show`` blocks.
@@ -21,7 +21,7 @@ This block must be placed before any of the ``show`` blocks.
 Displays a string on the OLED module without a newline.
 
 ```sig
-OLED.showString1("hello, micro:bit!")
+OLED.writeString("")
 ```
 
 The ``init`` block must be placed before this.
@@ -30,7 +30,7 @@ The ``init`` block must be placed before this.
 Displays a string on the OLED module with a newline.
 
 ```sig
-OLED.showString2("hello, micro:bit!")
+OLED.writeStringNewLine("")
 ```
 
 The ``init`` block must be placed before this.
@@ -40,7 +40,7 @@ The ``init`` block must be placed before this.
 Displays a number on the OLED module without a newline.
 
 ```sig
-OLED.showNumber1(123)
+OLED.writeNum(0)
 ```
 
 The ``init`` block must be placed before this.
@@ -50,7 +50,7 @@ The ``init`` block must be placed before this.
 Displays a number on the OLED module with a newline.
 
 ```sig
-OLED.showNumber2(123)
+OLED.writeNumNewLine(0)
 ```
 
 The ``init`` block must be placed before this.
@@ -103,20 +103,6 @@ OLED.drawLoadingBar(percent)
 ```
 
 The ``init`` block must be placed before this.
-
-
-## Example: Counter
-The following code is a simple counter that displays an increasing number every second.
-
-```blocks
-OLED.init(64, 128)
-let item = 0
-basic.forever(() => {
-    basic.pause(1000)
-    item += 1
-    OLED.showNumber(item)
-})
-```
 
 ## Supported targets
 
